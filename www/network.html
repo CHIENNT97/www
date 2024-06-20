@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simple Admin</title>
+  <title>RG500Q-EU</title>
   <!-- 从 css 文件夹导入所有 Bootstrap CSS 文件 -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -22,7 +22,7 @@
     <div class="container my-4" x-data="cellLocking()">
       <nav class="navbar navbar-expand-lg mt-2">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/"><span class="mb-0 h4">Simple Admin</span></a>
+          <a class="navbar-brand" href="/"><span class="mb-0 h4">RG500Q-EU</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="切换导航">
             <span class="navbar-toggler-icon"></span>
@@ -30,22 +30,22 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="/">首页</a>
+                <a class="nav-link" href="/">Thông Tin</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="network.html" aria-current="page">网络</a>
+                <a class="nav-link active" href="network.html" aria-current="page">Khoá Band</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/settings.html">设置</a>
+                <a class="nav-link" href="/settings.html">Lệnh AT</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/sms.html">短信</a>
+                <a class="nav-link" href="/sms.html">SMS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/watchat.html">控制台</a>
+                <a class="nav-link" href="/watchat.html">watchat</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="deviceinfo.html">设备信息</a>
+                <a class="nav-link" href="deviceinfo.html">Thiết Bị</a>
               </li>
             </ul>
             <span class="navbar-text">
@@ -62,7 +62,7 @@
           <div class="card">
             <div class="card-header">
               <div class="row align-items-center">
-                <div class="col">频段锁定</div>
+                <div class="col">Khóa băng tần</div>
                 <div class="col-md-3">
                   <select class="form-select" id="networkModeBand" aria-label="LTE">
                     <option selected value="LTE">LTE</option>
@@ -84,19 +84,19 @@
               <div class="d-flex align-items-center">
                 <div class="col">
                   <button type="button" class="btn btn-primary m-2" @click="lockSelectedBands()">
-                    锁定频段
+                    Khoá Băng Tần
                   </button>
                   <button type="button" class="btn btn-info m-2" id="uncheckAll">
-                    取消全选
+                    Bỏ Chọn Tất Cả
                   </button>
                   <button type="button" class="btn btn-danger m-2" @click="resetBandLocking()">
-                    重置
+                    Cài Lại
                   </button>
                 </div>
               </div>
             </div>
             <div class="card-footer">
-              <p x-text="'活动频段: ' + bands"></p>
+              <p x-text="'Dải tần hoạt động: ' + bands"></p>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
         <div class="col">
           <form>
             <div class="card">
-              <div class="card-header">网络工具</div>
+              <div class="card-header">Công Cụ Mạng</div>
               <div class="card-body row">
                 <div class="col">
                   <div class="mb-4">
@@ -115,7 +115,7 @@
                       x-bind:placeholder="apn === '-' ? '获取中...' : apn" />
                   </div>
                   <div class="mb-4 input-group grid gap-3">
-                    <label for="SIM1" class="form-label"> 更换SIM卡</label>
+                    <label for="SIM1" class="form-label"> Thay đổi thẻ SIM</label>
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" type="radio" name="inlineRadioOptions" aria-describedby="SIM1"
                         id="SIM1" value="option1" x-bind:checked="sim === '1'" x-on:click="newSim = '1'" />
@@ -131,30 +131,30 @@
 
                 <div class="col">
                   <div class="mb-4">
-                    <label for="nrModeControl" class="form-label">选择首选网络</label>
+                    <label for="nrModeControl" class="form-label">Chọn mạng ưa thích</label>
                     <select class="form-select" id="prefNetworkMode" x-model="prefNetworkMode"
                       aria-label="prefNetworkMode">
-                      <option selected x-text="prefNetwork === '-' ? '获取中...' : '当前: ' + prefNetwork"></option>
-                      <option value="AUTO">自动</option>
+                      <option selected x-text="prefNetwork === '-' ? '获取中...' : 'Chưa Chọn: ' + prefNetwork"></option>
+                      <option value="AUTO">Tự Động</option>
                       <option value="LTE">LTE</option>
                       <option value="LTE:NR5G">NR5G-NSA</option>
                       <option value="NR5G">NR5G-SA</option>
                     </select>
                   </div>
                   <div class="mb-4">
-                    <label for="prefNetwork" class="form-label">NR5G模式控制</label>
+                    <label for="prefNetwork" class="form-label">Điều khiển chế độ NR5G</label>
                     <select class="form-select" id="nrModeControl" x-model="nrModeControl" aria-label="nrModeControl">
-                      <option selected x-text="nrModeControl === '-' ? '获取中...' : '当前: ' + nrModeControl"></option>
-                      <option value="0">启用所有</option>
-                      <option value="2">禁用NR5G-NSA</option>
-                      <option value="1">禁用NR5G-SA</option>
+                      <option selected x-text="nrModeControl === '-' ? '获取中...' : 'Chưa Chọn: ' + nrModeControl"></option>
+                      <option value="0">Cho Phép Tất Cả</option>
+                      <option value="2">Vô Hiệu Hoá NR5G-NSA</option>
+                      <option value="1">Vô Hiệu Hoá NR5G-SA</option>
                     </select>
                   </div>
                 </div>
               </div>
               <div class="card-footer">
                 <button type="button" class="btn btn-primary" @click="saveChanges()">
-                  保存更改
+                  Lưu Lại
                 </button>
               </div>
             </div>
@@ -163,14 +163,14 @@
 
         <div class="col-md-4">
           <div class="card">
-            <div class="card-header">小区锁定</div>
+            <div class="card-header">Khóa di động</div>
             <div class="card-body">
               <select class="form-select" id="networkModeCell" x-model="networkModeCell" aria-label="LTE">
-                <option selected x-text="'当前: ' + cellLockStatus"></option>
+                <option selected x-text="'Hiện Tại: ' + cellLockStatus"></option>
                 <option>LTE</option>
                 <option>NR5G-SA</option>
-                <option>解锁LTE</option>
-                <option>解锁NR5G-SA</option>
+                <option>Mở Khoá LTE</option>
+                <option>Mở Khoá NR5G-SA</option>
               </select>
 
               <div class="my-4">
@@ -229,10 +229,10 @@
                 </button>
               </div>
               <div class="card-text">
-                <label class="form-label">小区扫描</label>
+                <label class="form-label">Quét Mạng</label>
                 <div class="d-grid gap-1 w-full">
                   <a class="btn btn-warning" type="button" href="/scanner.html" role="button">
-                    转到小区扫
+                    Quét Mạng DĐ
                   </a>
                 </div>
               </div>
