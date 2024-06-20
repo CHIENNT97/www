@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh" data-bs-theme="light">
+<html lang="vi" data-bs-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Simple Admin</title>
+    <title>RG501Q-EU</title>
     <!-- 从css文件夹导入所有Bootstrap css文件 -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg mt-2">
           <div class="container-fluid">
             <a class="navbar-brand" href="/"
-              ><span class="mb-0 h4">Simple Admin</span></a
+              ><span class="mb-0 h4">RG500Q-EU</span></a
             >
             <button
               class="navbar-toggler"
@@ -37,23 +37,23 @@
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav me-auto mb-2 ml-4 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" href="/">主页</a>
+                  <a class="nav-link" href="/">Thông Tin</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/network.html">网络</a>
+                  <a class="nav-link" href="/network.html">Khoá Band</a>
                 </li>
                 <li class="nav-item">
                   <a
-                    class="nav-link" href="/settings.html" >设置</a>
+                    class="nav-link" href="/settings.html" >Lệnh AT</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/sms.html">短信</a>
+                  <a class="nav-link" href="/sms.html">SMS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="/watchat.html" aria-current="page" >控制台</a>
+                  <a class="nav-link active" href="/watchat.html" aria-current="page" >watchat</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/deviceinfo.html">设备信息</a>
+                  <a class="nav-link" href="/deviceinfo.html">Thiết Bị</a>
                 </li>
               </ul>
               <span class="navbar-text">
@@ -67,14 +67,14 @@
         <div class="row mt-3 mb-4">
           <div class="col">
             <div class="card">
-              <div class="card-header">看门狗</div>
+              <div class="card-header">Cơ quan giám sát</div>
               <div class="card-body">
                 <div class="card-text">
                   <div>
                     <label
                       class="form-check-label m-lg-3"
                       for="flexSwitchCheckDefault"
-                      >选择看门狗状态</label
+                      >Chọn trạng thái cơ quan giám sát</label
                     >
                     <!-- 如果watchCatStatus为Enabled，则将其选中 -->
                     <input
@@ -87,7 +87,7 @@
                       x-bind:disabled="wacthCatStatus === 'Enable'"
                       x-model="wacthCatStatus"
                     />
-                    <label class="btn btn-primary" for="Enable">启用</label>
+                    <label class="btn btn-primary" for="Enable">Cho Phét</label>
 
                     <input
                       type="radio"
@@ -99,13 +99,13 @@
                       x-bind:disabled="wacthCatStatus === 'Disable'"
                       x-model="wacthCatStatus"
                     />
-                    <label class="btn btn-danger" for="Disable">禁用</label>
+                    <label class="btn btn-danger" for="Disable">Vô Hiệu Hoá</label>
                   </div>
                   <div class="input-group mb-3 mt-3">
                     <span
                       class="input-group-text"
                       id="inputGroup-sizing-default"
-                      >要Ping的IP或DNS</span
+                      >IP hoặc DNS để pingS</span
                     >
                     <input
                       type="text"
@@ -120,14 +120,14 @@
                     <span
                       class="input-group-text"
                       id="inputGroup-sizing-default"
-                      >Ping超时时间（秒）</span
+                      >Thời gian chờ Ping (giây）</span
                     >
                     <input
                       type="text"
                       class="form-control"
                       aria-label="Ping Failure Count"
                       aria-describedby="inputGroup-sizing-default"
-                      x-bind:placeholder="pingTimeout + ' 秒'"
+                      x-bind:placeholder="pingTimeout + ' Giây'"
                     />
                   </div>
 
@@ -135,7 +135,7 @@
                     <span
                       class="input-group-text"
                       id="inputGroup-sizing-default"
-                      >Ping失败次数</span
+                      >Số lần ping không thành công</span
                     >
                     <input
                       type="text"
@@ -151,20 +151,20 @@
                       class="form-select"
                       aria-label="Default select example"
                     >
-                      <option selected>选择操作</option>
-                      <option value="1">无</option>
-                      <option value="2">重启</option>
-                      <option value="3">切换SIM卡</option>
+                      <option selected>Chọn Hành Động</option>
+                      <option value="1">Không Có</option>
+                      <option value="2">Khởi Động Lại</option>
+                      <option value="3">Chuyển Đổi Sim</option>
                     </select>
                     <label class="mt-1">
-                      当前操作: <span x-text="action"></span>
+                      Hoạt động hiện tại: <span x-text="action"></span>
                     </label>
                   </div>
                 </div>
               </div>
               <div class="card-footer">
-                设置较低的Ping超时和Ping失败计数可能会由于高灵敏度导致间歇性断开连接。 <br />
-                根据您的需要选择适当的值。
+                Việc đặt Thời gian chờ Ping và Số lần lỗi Ping thấp hơn có thể gây ra tình trạng ngắt kết nối không liên tục do độ nhạy cao. <br />
+                Chọn giá trị phù hợp dựa trên nhu cầu của bạn.
               </div>
             </div>
           </div>
