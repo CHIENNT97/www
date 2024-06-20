@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simple Admin</title>
+  <title>RG500Q-EU</title>
   <!-- 从 css 文件夹导入所有 Bootstrap css 文件 -->
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -22,19 +22,19 @@
     <div class="container my-4" x-data="getStaticNetworkInfo()">
       <nav class="navbar navbar-expand-lg mt-2">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/"><span class="mb-0 h4">Simple Admin</span></a>
+          <a class="navbar-brand" href="/"><span class="mb-0 h4">RG500Q-EU</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="切换导航">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">首页</a></li>
-              <li class="nav-item"><a class="nav-link" href="network.html">网络</a></li>
-              <li class="nav-item"><a class="nav-link" href="/settings.html">Cài Đặt</a></li>
-              <li class="nav-item"><a class="nav-link" href="/sms.html">短信</a></li>
-              <li class="nav-item"><a class="nav-link" href="/watchat.html">控制台</a></li>
-              <li class="nav-item"><a class="nav-link" href="/deviceinfo.html">设备信息</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Thông Tin</a></li>
+              <li class="nav-item"><a class="nav-link" href="network.html">Khoá Band</a></li>
+              <li class="nav-item"><a class="nav-link" href="/settings.html">Lệnh AT</a></li>
+              <li class="nav-item"><a class="nav-link" href="/sms.html">SMS</a></li>
+              <li class="nav-item"><a class="nav-link" href="/watchat.html">watchat</a></li>
+              <li class="nav-item"><a class="nav-link" href="/deviceinfo.html">Thiết Bị</a></li>
             </ul>
             <span class="navbar-text">
               <button class="btn btn-link text-reset" id="darkModeToggle">黑暗模式</button>
@@ -53,7 +53,7 @@
               </svg>
               <h1 class="card-text mt-4" x-text="temperature + ' &deg;C'"></h1>
             </div>
-            <div class="card-footer text-center">温度</div>
+            <div class="card-footer text-center">Nhiệt Độ</div>
           </div>
         </div>
 
@@ -66,7 +66,7 @@
               </svg>
               <h1 class="card-text mt-4" x-text="sim"></h1>
             </div>
-            <div class="card-footer text-center">SIM 卡</div>
+            <div class="card-footer text-center">SIM</div>
           </div>
         </div>
 
@@ -79,7 +79,7 @@
               </svg>
               <h1 class="card-text mt-4" x-text="signalPercentage + '%'"></h1>
             </div>
-            <div class="card-footer text-center">信号百分比</div>
+            <div class="card-footer text-center">Tín Hiệu</div>
           </div>
         </div>
 
@@ -92,7 +92,7 @@
               </svg>
               <h1 class="card-text mt-4" x-text="internetConnection"></h1>
             </div>
-            <div class="card-footer text-center">互联网连接</div>
+            <div class="card-footer text-center">Kết Nối Mạng</div>
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@
       <div class="row mt-5 gap-3">
         <div class="col">
           <div class="card">
-            <div class="card-header">网络信息</div>
+            <div class="card-header">Thông tin Internet</div>
             <div class="card-body">
               <div class="card-text table-responsive-sm">
                 <table class="table">
@@ -110,7 +110,7 @@
                       <td x-text="active_sim"></td>
                     </tr>
                     <tr>
-                      <th scope="row">运营商</th>
+                      <th scope="row">Nhà Mạng</th>
                       <td x-text="network_provider"></td>
                     </tr>
                     <tr>
@@ -122,15 +122,15 @@
                       <td x-text="apn"></td>
                     </tr>
                     <tr>
-                      <th scope="row">网络模式</th>
+                      <th scope="row">chế độ mạng</th>
                       <td x-text="network_mode"></td>
                     </tr>
                     <tr>
-                      <th scope="row">频段</th>
+                      <th scope="row">Băng Tần</th>
                       <td x-text="bands"></td>
                     </tr>
                     <tr>
-                      <th scope="row">带宽</th>
+                      <th scope="row">Băng Thông</th>
                       <td x-text="bandwidth"></td>
                     </tr>
                     <tr>
@@ -147,7 +147,7 @@
                       <td x-text="ipv6"></td>
                     </tr>
                     <tr>
-                      <th scope="row">在线时长</th>
+                      <th scope="row">Thời gian trực tuyến</th>
                       <td x-text="uptime"></td>
                     </tr>
                   </tbody>
@@ -157,7 +157,7 @@
             <div class="card-footer">
               <div class="row row-cols-2">
                 <div class="col">
-                  <p class="btn">刷新频率（最少 3 秒）</p>
+                  <p class="btn">Tần Suất Làm Mới</p>
                 </div>
                 <div class="col">
                   <div class="input-group">
@@ -173,13 +173,13 @@
 
         <div class="col">
           <div class="card">
-            <div class="card-header">信号信息</div>
+            <div class="card-header">thông tin tín hiệu</div>
             <div class="card-body">
               <div class="card-text table-responsive-sm">
                 <table class="table">
                   <tbody>
                     <tr>
-                      <th scope="row">信号评估</th>
+                      <th scope="row">Đánh giá tín hiệu</th>
                       <td x-text="signalAssessment"></td>
                     </tr>
                     <tr>
@@ -281,7 +281,7 @@
                 <div class="row">
                   <div class="col">
                     <div>
-                      <p class="btn">更新时间</p>
+                      <p class="btn">Cập Nhật Thời Gian</p>
                     </div>
                   </div>
                   <div class="col">
@@ -299,7 +299,7 @@
   <script>
     function getStaticNetworkInfo() {
       return {
-        sim: "未激活",
+        sim: "Chưa Kích Hoạt",
         temperature: "0",
         active_sim: "-",
         network_provider: "-",
@@ -317,7 +317,7 @@
         earfcns: "-",
         pcc_pci: "-",
         scc_pci: "-",
-        signalAssessment: "未知",
+        signalAssessment: "Không Xác Định",
         csq: "-",
         rssi: "-",
         cellID: "-",
@@ -336,12 +336,12 @@
         sinrLTEPercentage: "0%",
         sinrNRPercentage: "0%",
         signalPercentage: "0",
-        internetConnection: "未连接",
+        internetConnection: "Chưa Kết Nối",
         lastUpdate: new Date().toLocaleString(),
         newRefreshRate: null,
         refreshRate: 3,
         intervalId: null,
-        uptime: "未知",
+        uptime: "Không Xác Định",
 
         fetchNetworkInfo() {
           this.atcmd = 'AT+QSIMSTAT?;+CSQ;+QTEMP;+QUIMSLOT?;+QSPN;+CGCONTRDP=1;+QMAP="WWAN";+QENG="servingcell";+QNWINFO;+QRSRP';
@@ -360,7 +360,7 @@
           if (simStatusLine) {
             const simStatusParts = simStatusLine.replace('+QSIMSTAT:', '').trim().split(',').map(part => part.trim());
             if (simStatusParts[1] === "1") {
-              this.sim = "已激活";
+              this.sim = "Kích Hoạt";
             } else {
               this.resetNetworkInfo();
               return;
@@ -678,18 +678,18 @@
           this.intervalId = setInterval(() => {
             this.fetchNetworkInfo();
 
-            if (this.sim !== "未激活") {
+            if (this.sim !== "Chưa Kích Hoạt") {
             this.requestPing().then((data) => {
                 const response = data.trim();
                 if (response === "OK") {
-                  this.internetConnection = "已连接";
+                  this.internetConnection = "Đã Kết Nối";
                 } else {
-                  this.internetConnection = "未连接";
+                  this.internetConnection = "Chưa Kết Nối";
                 }
               })
               .catch((error) => {
                 console.error("Error:", error);
-                this.internetConnection = "未连接";
+                this.internetConnection = "Chưa Kết Nối";
               });
           }
 
