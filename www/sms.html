@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="vi" data-bs-theme="light">
 
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Simple Admin</title>
+	<title>RG501Q-EU</title>
 	<!-- 导入自定义和Bootstrap样式 -->
 	<link rel="stylesheet" href="css/styles.css" />
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -20,7 +20,7 @@
 		<div class="container my-4" x-data="fetchSMS()">
 			<nav class="navbar navbar-expand-lg mt-2">
 				<div class="container-fluid">
-					<a class="navbar-brand" href="/"><span class="mb-0 h4">Simple Admin</span></a>
+					<a class="navbar-brand" href="/"><span class="mb-0 h4">RG501Q-EU</span></a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
 						aria-controls="navbarText" aria-expanded="false" aria-label="切换导航">
 						<span class="navbar-toggler-icon"></span>
@@ -28,27 +28,27 @@
 					<div class="collapse navbar-collapse" id="navbarText">
 						<ul class="navbar-nav me-auto mb-2 ml-4 mb-lg-0">
 							<li class="nav-item">
-								<a class="nav-link" href="/" x-text="translations[selectedLanguage].home">主页</a>
+								<a class="nav-link" href="/" x-text="translations[selectedLanguage].home">Thông Tin</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="/network.html"
-									x-text="translations[selectedLanguage].network">网络</a>
+									x-text="translations[selectedLanguage].network">Khoá Band</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="/settings.html"
-									x-text="translations[selectedLanguage].settings">设置</a>
+									x-text="translations[selectedLanguage].settings">Lệnh AT</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link active" href="/sms.html" aria-current="page"
-									x-text="translations[selectedLanguage].sms">短信</a>
+									x-text="translations[selectedLanguage].sms">SMS</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="/watchat.html"
-									x-text="translations[selectedLanguage].console">控制台</a>
+									x-text="translations[selectedLanguage].console">watchat</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="/deviceinfo.html"
-									x-text="translations[selectedLanguage].deviceInfo">设备信息</a>
+									x-text="translations[selectedLanguage].deviceInfo">Thiết Bị</a>
 							</li>
 						</ul>
 						<span class="navbar-text">
@@ -70,7 +70,7 @@
 			<div class="row mt-5 mb-4">
 				<div class="col">
 					<div class="card">
-						<div class="card-header" x-text="translations[selectedLanguage].inbox">收件箱</div>
+						<div class="card-header" x-text="translations[selectedLanguage].inbox">Hộp thư đến</div>
 						<div class="card-body">
 							<div class="card-text">
 								<div class="col">
@@ -223,7 +223,7 @@
 						recipientNumber: "收件人号码",
 						messageContent: "短信内容",
 						sendSMSButton: "发送短信",
-						sender: "发件人",
+						sender: "Người Gửi",
 						dateTime: "日期和时间",
 						enterRecipientNumber: "输入收件人号码",
 						enterMessageContent: "输入短信内容"
