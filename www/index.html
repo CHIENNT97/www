@@ -448,9 +448,9 @@
         },
 
         resetNetworkInfo() {
-          this.network_mode = "网络已断开";
+          this.network_mode = "Bị Ngắt Kết Nối";
           this.lastUpdate = new Date().toLocaleString();
-          this.sim = "未激活";
+          this.sim = "Chưa Kích Hoạt";
           this.temperature = "0";
           this.active_sim = "-";
           this.network_provider = "-";
@@ -594,15 +594,15 @@
               const hoursAndMinutes = data.match(/(\d+):(\d+),/);
 
               if (hoursAndMinutes) {
-                this.uptime = `${days ? days[1] + " 天 " : ""}${hoursAndMinutes[1] + " 小时 "}${hoursAndMinutes[2] + " 分钟"}`;
+                this.uptime = `${days ? days[1] + " Ngày " : ""}${hoursAndMinutes[1] + " Giờ "}${hoursAndMinutes[2] + " Phút"}`;
               } else if (days) {
-                this.uptime = `${days[1] + " 天"}${hours ? ", " + hours[1] + " 小时" : ""}${minutes ? ", " + minutes[1] + " 分钟" : ""}`;
+                this.uptime = `${days[1] + " Ngày"}${hours ? ", " + hours[1] + " Giờ" : ""}${minutes ? ", " + minutes[1] + " Phút" : ""}`;
               } else if (hours) {
-                this.uptime = `${hours[1] + " 小时"}${minutes ? ", " + minutes[1] + " 分钟" : ""}`;
+                this.uptime = `${hours[1] + " Giờ"}${minutes ? ", " + minutes[1] + " Phút" : ""}`;
               } else if (minutes) {
-                this.uptime = `${minutes[1] + " 分钟"}`;
+                this.uptime = `${minutes[1] + " Phút"}`;
               } else {
-                this.uptime = "未知时间";
+                this.uptime = "Thời Gian Chưa Tính";
               }
             });
         },
@@ -656,24 +656,24 @@
 
           this.fetchNetworkInfo();
 
-          if (this.sim !== "未激活") {
+          if (this.sim !== "Chưa Kích Hoạt") {
             this.requestPing().then((data) => {
                 const response = data.trim();
                 if (response === "OK") {
-                  this.internetConnection = "已连接";
+                  this.internetConnection = "Đã Kết Nối";
                 } else {
-                  this.internetConnection = "未连接";
+                  this.internetConnection = "Chưa Kết Nối";
                 }
               })
               .catch((error) => {
                 console.error("Error:", error);
-                this.internetConnection = "未连接";
+                this.internetConnection = "Chưa Kết Nối";
               });
           }
 
           this.fetchUpTime();
           this.lastUpdate = new Date().toLocaleString();
-          console.log("已初始化");
+          console.log("Đã Khởi Tạo");
 
           this.intervalId = setInterval(() => {
             this.fetchNetworkInfo();
