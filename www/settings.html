@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-bs-theme="light">
+<html lang="vi-VN" data-bs-theme="light">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simple Admin</title>
+  <title>RG501Q-EU</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
 
@@ -21,7 +21,7 @@
     <div class="container my-4" x-data="simpleSettings()">
       <nav class="navbar navbar-expand-lg mt-2">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/"><span class="mb-0 h4">Simple Admin</span></a>
+          <a class="navbar-brand" href="/"><span class="mb-0 h4">RG501Q-EU</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="切换导航">
             <span class="navbar-toggler-icon"></span>
@@ -29,22 +29,22 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="/">主页</a>
+                <a class="nav-link" href="/">Thông Tin</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/network.html">网络</a>
+                <a class="nav-link" href="/network.html">Khoá Band</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/settings.html" aria-current="page">设置</a>
+                <a class="nav-link active" href="/settings.html" aria-current="page">Lệnh AT</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/sms.html">短信</a>
+                <a class="nav-link" href="/sms.html">SMS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/watchat.html">控制台</a>
+                <a class="nav-link" href="/watchat.html">watchat</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/deviceinfo.html">设备信息</a>
+                <a class="nav-link" href="/deviceinfo.html">Thiết Bị</a>
               </li>
             </ul>
             <span class="navbar-text">
@@ -59,7 +59,7 @@
       <div class="row mt-5 mb-4">
         <div class="col">
           <div class="card">
-            <div class="card-header">AT 终端</div>
+            <div class="card-header">AT Thiết Bị</div>
             <div class="card-body">
               <div class="card-text">
                 <div class="form-floating mb-4">
@@ -75,16 +75,16 @@
                     <input type="text" class="form-control" id="atCommandInput" placeholder="ATI"
                       aria-describedby="atCommandInput" x-model="atcmd" @keydown.enter="sendATCommand()" />
                     <div id="atCommandInputHelper" class="form-text">
-                      用逗号（,）分隔多个命令。
+                      Phân cách nhiều lệnh bằng dấu phẩy (,)
                     </div>
                   </div>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                     <button class="btn btn-primary me-md-2" type="button" @click="sendATCommand()"
                       :disabled="isLoading">
-                      提交
+                      Gửi
                     </button>
                     <button class="btn btn-danger" type="button" @click="clearResponses()" :disabled="isClean">
-                      清除
+                      Xoá
                     </button>
                   </div>
                 </div>
@@ -96,33 +96,33 @@
       <div class="row">
         <div class="col">
           <div class="card">
-            <div class="card-header">一键实用工具</div>
+            <div class="card-header">Tiện Ích</div>
             <div class="card-body">
               <div class="card-text">
                 <div class="table-responsive">
                   <table class="table">
                     <tbody>
                       <tr>
-                        <th scope="row">重启</th>
+                        <th scope="row">Khởi Động Lại</th>
                         <td>
                           <button type="submit" class="btn btn-danger" @click="showRebootModal()" :disabled="isLoading">
-                            重启
+                            Khởi Động Lại
                           </button>
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row">重置 AT 命令设置</th>
+                        <th scope="row">Đặt lại AT</th>
                         <td>
                           <button type="submit" class="btn btn-danger" @click="resetATCommands()" :disabled="isLoading">
-                            重置
+                            Cài Lại
                           </button>
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row">IP 透传</th>
+                        <th scope="row">Chế Độ Truyền</th>
                         <td>
                           <select class="form-select" id="ipPassModeSelect" x-model="ipPassMode">
-                            <option selected>透传模式</option>
+                            <option selected>Chế Độ Truyền trong suốt </option>
                             <option value="ETH">ETH</option>
                             <option value="USB">USB (ECM/RNDIS)</option>
                           </select>
@@ -130,21 +130,21 @@
                         <td>
                           <button type="submit" class="btn btn-primary" @click="ipPassThroughEnable()"
                             x-show="ipPassStatus === false" :disabled="isLoading">
-                            启用
+                            Cho Phép
                           </button>
                           <button type="submit" class="btn btn-danger" @click="ipPassThroughDisable()"
                             x-show="ipPassStatus === true" :disabled="isLoading">
-                            禁用
+                            Vô Hiệu Hoá
                           </button>
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row">USB 调制解调器协议</th>
+                        <th scope="row">Giao thức modem</th>
                         <td>
                           <select class="form-select" id="usbNetModeSelect" x-model="usbNetMode">
                             <option selected x-text="currentUsbNetMode"></option>
                             <option value="RMNET">RMNET</option>
-                            <option value="ECM">ECM (推荐)</option>
+                            <option value="ECM">ECM (Khuyến Nghị)</option>
                             <option value="MBIM">MBIM</option>
                             <option value="RNDIS">RNDIS</option>
                           </select>
@@ -152,33 +152,33 @@
                         <td>
                           <button type="submit" class="btn btn-primary" @click="usbNetModeChanger()"
                             :disabled="isLoading">
-                            更改
+                            Thay Đổi
                           </button>
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row">板载 DNS<sup>V6</sup>代理</th>
+                        <th scope="row">Proxy DNS<sup>V6</sup>trên bo mạch</th>
                         <td>
                           <button type="submit" class="btn btn-primary" @click="onBoardDNSV6ProxyEnable()"
                             x-show="DNSV6ProxyStatus === false" :disabled="isLoading">
-                            启用
+                            Cho Phép
                           </button>
                           <button type="submit" class="btn btn-danger" @click="onBoardDNSV6ProxyDisable()"
                             x-show="DNSV6ProxyStatus === true" :disabled="isLoading">
-                            禁用
+                            Vô Hiệu Hoá
                           </button>
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row">板载 DNS<sup>V4</sup>代理</th>
+                        <th scope="row">Proxy DNS<sup>V4</sup>Trên bo mạch</th>
                         <td>
                           <button type="submit" class="btn btn-primary" @click="onBoardDNSV4ProxyEnable()"
                             x-show="DNSV4ProxyStatus === false" :disabled="isLoading">
-                            启用
+                            Cho Phép
                           </button>
                           <button type="submit" class="btn btn-danger" @click="onBoardDNSV4ProxyDisable()"
                             x-show="DNSV4ProxyStatus === true" :disabled="isLoading">
-                            禁用
+                            Vô Hiệu Hoá
                           </button>
                         </td>
                       </tr>
@@ -191,19 +191,19 @@
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-header">TTL设置</div>
+            <div class="card-header">cài đặt TTL</div>
             <div class="card-body">
-              <label for="TTLState" class="form-label">TTL 状态和值</label>
+              <label for="TTLState" class="form-label">Trạng thái và giá trị TTL</label>
               <div class="row">
                 <div class="col">
                   <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3"
                     x-show="ttlStatus === true">
-                    TTL 是激活的
+                    TTL đang hoạt động
                   </div>
 
                   <div class="p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3"
                     x-show="ttlStatus === false">
-                    TTL 是未激活的
+                    TTL Không hoạt động
                   </div>
                 </div>
                 <div class="col">
@@ -213,14 +213,14 @@
               </div>
               <div class="card-text mb-3">
                 <div class="mb-4">
-                  <input type="text" class="form-control" id="ttlInput" placeholder="TTL 值" x-model="newTTL" />
+                  <input type="text" class="form-control" id="ttlInput" placeholder="Giá trị TTL" x-model="newTTL" />
                   <div id="ttlValueHelper" class="form-text">
-                    设置 TTL 值为 0 以禁用。
+                    Đặt giá trị TTL thành 0 để tắt.
                   </div>
                 </div>
                 <div class="d-grid gap-1">
                   <button class="btn btn-primary" type="button" @click="setTTL()">
-                    更新
+                    Thay Đổi
                   </button>
                 </div>
               </div>
@@ -365,7 +365,7 @@
         resetATCommands() {
           this.atcmd = "AT&F";
           this.sendATCommand();
-          console.log("重置 AT 命令");
+          console.log("重置 Lệnh AT");
           this.atcmd = "";
           this.atCommandResponse = "";
           this.showRebootModal();
